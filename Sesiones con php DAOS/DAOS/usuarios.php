@@ -20,7 +20,8 @@ function existeUsuario($usuario, $pwd){
     }
 
     return $return;
-};
+
+}
 
 function crearUsuario($usuario, $pwd){
 
@@ -41,5 +42,6 @@ function crearUsuario($usuario, $pwd){
     file_put_contents($FILE, $jsondata);
 
 }
+
 
 ?>

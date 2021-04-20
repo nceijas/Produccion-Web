@@ -1,0 +1,10 @@
+Analisé el código e hice las siguientes modificaciones y mejoras:
+
+a. Añadí un archivo de php con su respectivo archivo json de errores. La idea es contener todos los mensajes en el
+archivo e ir mostrándolos acorde a la situación.
+
+b. Agregué lógica de PHP al archivo index para mostrar algunas opciones dependiendo de los requerimientos.
+
+c. A futuro, creo que el código puede mejorarse agregando instancias de validación de información en los métodos de
+los archivos PHP en la carpeta DAOS (validar si los campos están vacíos, validar si ya existe un usuario creado con 
+alguna de las credenciales ofrecidas, validar que solo se ingrese texto plano y no código renderizable.)

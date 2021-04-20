@@ -10,5 +10,9 @@
     {
         "codigo": "3",
         "mensaje": "¡Listo! Tu usuario fue creado correctamente."
+    },
+    {
+        "codigo": "4",
+        "mensaje": "Este usuario ya existe. Por favor, elegí otro nombre o logueate correctamente."
     }
 ]
