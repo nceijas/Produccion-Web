@@ -11,14 +11,23 @@
     <title>Inicio</title>
 </head>
 <body>
+
     <div class="login">
         <?php
 
         session_start();
-        if(isset($_SESSION["error"])){
+        $registrar = false;
 
-            ?> <div class="error"> <?php echo $_SESSION["error"]; ?> </div>
+        if (isset($_GET["registrar"])){
+            echo "<h3>Por favor, ingresá el usuario y contraseña que quieras utilizar</h3>";
+            $registrar = true;
+
+        } elseif (isset($_SESSION["error"])){?>
+         
+            <div class="error"> <?php echo $_SESSION["error"]; ?></div>
+            
             <?php
+            
         }else{
 
             echo "<h2>Por favor, logueate</h2>";
@@ -26,7 +35,7 @@
 
         ?>
 
-    <form method="POST" action= "sesiones.php">
+    <form method="POST" <?php if ($registrar===true){?>action= "registrar.php"<?php }else{ ?> action= "sesiones.php"<?php } ?>>
         <div class="mb-3">
             <label class="form-label">Usuario</label>
             <input type="text" name="usuario" class="form-control">
@@ -36,9 +45,18 @@
                 <input type="password" name="pass" class="form-control">
             </div>
         <button type="submit" class="btn btn-light">Hecho</button>
+    </form>
+
+    <div>
+        <form method="GET" <?php if ($registrar===true){?>style="display:none"<?php } ?>>
+            <button href="./index.php" class="btn btn-danger" input type="text" name="registrar" class="form-control">No tengo un usuario ¡Me quiero registrar!</button>
+        </form>
     </div>
-</form>
-</div>
+
+    </div>
+
+   
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
